@@ -2279,3 +2279,90 @@ footer p{
         scroll-behavior: auto !important;
     }
 }
+
+/* =========================================
+   LIGHTINGSKY MOBILE NAVIGATION FINAL FIX
+   Keep desktop navigation unchanged.
+========================================= */
+.menu-toggle {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        gap: 12px;
+    }
+
+    .menu-toggle {
+        display: inline-flex !important;
+        flex: 0 0 44px;
+        width: 44px;
+        height: 44px;
+        padding: 10px !important;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 5px;
+        position: relative;
+        z-index: 10002;
+    }
+
+    .nav-links {
+        position: fixed !important;
+        top: 84px;
+        right: 16px;
+        left: auto;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        justify-content: flex-start;
+        gap: 6px !important;
+        width: min(280px, calc(100vw - 32px));
+        max-height: calc(100vh - 104px);
+        overflow-y: auto;
+        margin: 0;
+        padding: 16px !important;
+        list-style: none;
+        background: rgba(5, 13, 31, .98);
+        border: 1px solid rgba(255, 255, 255, .14);
+        border-radius: 16px;
+        box-shadow: 0 18px 45px rgba(0, 0, 0, .45);
+        transform: translateX(calc(100% + 24px));
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        transition: transform .25s ease, opacity .25s ease, visibility .25s ease;
+        z-index: 10001;
+    }
+
+    .nav-links.active {
+        right: 16px !important;
+        transform: translateX(0);
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .nav-links li {
+        display: block;
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 13px 14px;
+        border-radius: 10px;
+        white-space: nowrap;
+    }
+}
+
