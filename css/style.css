@@ -2385,3 +2385,51 @@ footer p{
     .nav-links li { display:block; width:100%; }
     .nav-links a { display:block; width:100%; padding:13px 14px; border-radius:10px; white-space:nowrap; }
 }
+
+
+/* MOBILE MENU VISIBILITY OVERRIDE - 08 NOV 2026 */
+@media screen and (max-width: 768px) {
+  header { position: relative; z-index: 10000; }
+  .navbar { position: relative; z-index: 10000; overflow: visible !important; }
+  .navbar .menu-toggle {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 46px !important;
+    min-width: 46px !important;
+    height: 46px !important;
+    flex: 0 0 46px !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    position: relative !important;
+    z-index: 10003 !important;
+  }
+  .navbar .nav-links {
+    display: none !important;
+    position: fixed !important;
+    top: 88px !important;
+    right: 12px !important;
+    left: auto !important;
+    width: min(290px, calc(100vw - 24px)) !important;
+    max-height: calc(100dvh - 108px) !important;
+    overflow-y: auto !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 6px !important;
+    padding: 14px !important;
+    margin: 0 !important;
+    background: #071329 !important;
+    border: 1px solid rgba(255,255,255,.2) !important;
+    border-radius: 14px !important;
+    box-shadow: 0 16px 40px rgba(0,0,0,.55) !important;
+    transform: none !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    z-index: 10002 !important;
+  }
+  .navbar .nav-links.active { display: flex !important; }
+  .navbar .nav-links li { display: block !important; width: 100% !important; }
+  .navbar .nav-links a { display: block !important; width: 100% !important; padding: 14px !important; color: #fff !important; }
+}
