@@ -8,43 +8,74 @@
 
     <title>LIGHTINGSKY | Professional Drone Light Shows in India</title>
 
-    <!-- SEO META TAGS -->
-    <meta name="description" content="LIGHTINGSKY PRIVATE LIMITED delivers spectacular drone light shows for weddings, corporate events, festivals, government events and brand promotions across India.">
-
-    <meta name="keywords" content="LIGHTINGSKY, Drone Light Show India, Drone Show Company, Wedding Drone Show, Corporate Drone Show, Drone Advertising, Drone Shows Gujarat">
-
-    <meta name="author" content="LIGHTINGSKY PRIVATE LIMITED">
+    <!-- LIGHTINGSKY SEO -->
+    <meta name="description" content="LIGHTINGSKY PRIVATE LIMITED creates professional drone light shows for weddings, corporate events, festivals, government celebrations and brand promotions across India.">
     <meta name="robots" content="index, follow">
-
-    <!-- CANONICAL URL -->
     <link rel="canonical" href="https://lightingsky.in/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="LIGHTINGSKY">
+    <meta property="og:title" content="LIGHTINGSKY | Professional Drone Light Shows in India">
+    <meta property="og:description" content="LIGHTINGSKY PRIVATE LIMITED creates professional drone light shows for weddings, corporate events, festivals, government celebrations and brand promotions across India.">
+    <meta property="og:url" content="https://lightingsky.in/">
+    <meta property="og:image" content="https://lightingsky.in/images/Logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LIGHTINGSKY | Professional Drone Light Shows in India">
+    <meta name="twitter:description" content="LIGHTINGSKY PRIVATE LIMITED creates professional drone light shows for weddings, corporate events, festivals, government celebrations and brand promotions across India.">
+    <meta name="twitter:image" content="https://lightingsky.in/images/Logo.png">
 
-    <!-- FAVICON -->
+
+    <!-- SEO META TAGS -->
+
+
+
+<!-- CANONICAL URL -->
+<!-- FAVICON -->
     <link rel="icon" type="image/png" href="images/favicon.png">
 
     <!-- OPEN GRAPH / SOCIAL MEDIA -->
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="LIGHTINGSKY">
-    <meta property="og:title" content="LIGHTINGSKY | Drone Light Shows">
-    <meta property="og:description" content="Transforming the night sky into spectacular stories with synchronized drone formations.">
-    <meta property="og:url" content="https://lightingsky.in/">
-    <meta property="og:image" content="https://lightingsky.in/images/Logo.png">
 
-    <!-- TWITTER -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="LIGHTINGSKY | Drone Light Shows">
-    <meta name="twitter:description" content="Professional drone light shows for unforgettable events across India.">
-    <meta name="twitter:image" content="https://lightingsky.in/images/Logo.png">
 
-    <!-- GOOGLE FONT -->
+
+
+
+<!-- TWITTER -->
+
+
+
+<!-- GOOGLE FONT -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- MAIN CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "LIGHTINGSKY PRIVATE LIMITED",
+      "url": "https://lightingsky.in/",
+      "logo": "https://lightingsky.in/images/Logo.png",
+      "email": "lightingskydrone@gmail.com",
+      "telephone": ["+91-72028-42521", "+91-97270-69727"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "SF/3, Shivam Complex, near Shakuntal Bungalow, New India Colony, Nikol",
+        "addressLocality": "Ahmedabad",
+        "addressRegion": "Gujarat",
+        "postalCode": "382350",
+        "addressCountry": "IN"
+      },
+      "sameAs": [
+        "https://www.instagram.com/lightingsky.in/",
+        "https://www.facebook.com/profile.php?id=61590382779929"
+      ]
+    }
+    </script>
+
 </head>
 
 <body>
@@ -60,14 +91,9 @@
                 <img src="images/Logo.png" alt="LIGHTINGSKY Logo">
             </a>
 
-            <button
-                class="menu-toggle"
-                id="menu-toggle"
-                type="button"
-                aria-label="Open navigation menu"
-                aria-controls="nav-links"
-                aria-expanded="false">
-                ☰
+            <button class="menu-toggle" id="menu-toggle" type="button"
+                aria-label="Open navigation menu" aria-controls="nav-links" aria-expanded="false">
+                <span></span><span></span><span></span>
             </button>
 
             <ul class="nav-links" id="nav-links">
@@ -362,8 +388,8 @@
                     <a
                         href="https://www.instagram.com/lightingsky.in/"
                         class="social-instagram"
-                        target="_blank"
-                        rel="noopener noreferrer">
+                        
+                         target="_blank" rel="noopener noreferrer">
 
                         <img
                             src="images/icon/insta.png"
@@ -410,72 +436,37 @@
     <!-- ================= MOBILE NAVIGATION SCRIPT ================= -->
 
     <script>
-        (function () {
+(function () {
+    document.addEventListener('DOMContentLoaded', function () {
+        var toggle = document.getElementById('menu-toggle');
+        var nav = document.getElementById('nav-links');
+        if (!toggle || !nav) return;
 
-            document.addEventListener('DOMContentLoaded', function () {
+        function setMenu(open) {
+            nav.classList.toggle('active', open);
+            toggle.classList.toggle('open', open);
+            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            toggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+        }
 
-                var toggle = document.getElementById('menu-toggle');
-                var nav = document.getElementById('nav-links');
+        toggle.addEventListener('click', function () {
+            setMenu(!nav.classList.contains('active'));
+        });
 
-                if (!toggle || !nav) return;
+        nav.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', function () { setMenu(false); });
+        });
 
-                toggle.addEventListener('click', function () {
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') setMenu(false);
+        });
 
-                    var isOpen = nav.classList.toggle('active');
-
-                    toggle.classList.toggle('open');
-
-                    toggle.setAttribute(
-                        'aria-expanded',
-                        isOpen ? 'true' : 'false'
-                    );
-
-                    toggle.setAttribute(
-                        'aria-label',
-                        isOpen ? 'Close navigation menu' : 'Open navigation menu'
-                    );
-
-                });
-
-                nav.querySelectorAll('a').forEach(function (link) {
-
-                    link.addEventListener('click', function () {
-
-                        if (nav.classList.contains('active')) {
-
-                            nav.classList.remove('active');
-                            toggle.classList.remove('open');
-
-                            toggle.setAttribute('aria-expanded', 'false');
-                            toggle.setAttribute('aria-label', 'Open navigation menu');
-
-                        }
-
-                    });
-
-                });
-
-                window.addEventListener('keydown', function (event) {
-
-                    if (
-                        event.key === 'Escape' &&
-                        nav.classList.contains('active')
-                    ) {
-
-                        nav.classList.remove('active');
-                        toggle.classList.remove('open');
-
-                        toggle.setAttribute('aria-expanded', 'false');
-                        toggle.setAttribute('aria-label', 'Open navigation menu');
-
-                    }
-
-                });
-
-            });
-
-        })();
-    </script>
+        window.addEventListener('resize', function () {
+            if (window.innerWidth > 768) setMenu(false);
+        });
+    });
+})();
+</script>
 
     <!-- MAIN JAVASCRIPT -->
     <script src="js/script.js"></script>

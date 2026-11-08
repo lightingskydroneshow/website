@@ -6,14 +6,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Contact Us | LIGHTINGSKY Drone Shows</title>
+    <title>Contact LIGHTINGSKY | Book a Drone Light Show in India</title>
+
+    <!-- LIGHTINGSKY SEO -->
+    <meta name="description" content="Contact LIGHTINGSKY PRIVATE LIMITED to plan a drone light show for your wedding, corporate event, festival, government celebration or brand promotion.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://lightingsky.in/contact.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="LIGHTINGSKY">
+    <meta property="og:title" content="Contact LIGHTINGSKY | Book a Drone Light Show in India">
+    <meta property="og:description" content="Contact LIGHTINGSKY PRIVATE LIMITED to plan a drone light show for your wedding, corporate event, festival, government celebration or brand promotion.">
+    <meta property="og:url" content="https://lightingsky.in/contact.html">
+    <meta property="og:image" content="https://lightingsky.in/images/Logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact LIGHTINGSKY | Book a Drone Light Show in India">
+    <meta name="twitter:description" content="Contact LIGHTINGSKY PRIVATE LIMITED to plan a drone light show for your wedding, corporate event, festival, government celebration or brand promotion.">
+    <meta name="twitter:image" content="https://lightingsky.in/images/Logo.png">
+
 
     <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-
 </head>
 
 <body>
@@ -31,7 +47,10 @@
 
             </a>
 
-            <div class="menu-toggle" id="menu-toggle" aria-expanded="false">☰</div>
+            <button class="menu-toggle" id="menu-toggle" type="button"
+                aria-label="Open navigation menu" aria-controls="nav-links" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
 
             <ul class="nav-links" id="nav-links">
                 <li><a href="index.html">Home</a></li>
@@ -109,7 +128,7 @@
                     target="_blank"
                     class="btn-primary whatsapp-button">
 
-                        <img class="btn-icon"> Chat On WhatsApp
+                        <img src="images/icon/WA.png" alt="" class="btn-icon" aria-hidden="true"> Chat On WhatsApp
 
                     </a>
                     
@@ -199,9 +218,9 @@
 
         <div class="social-links">
 
-            <a href="https://www.instagram.com/lightingsky.india/"
-            target="_blank"
-            rel="noopener noreferrer">
+            <a href="https://www.instagram.com/lightingsky.in/"
+            
+             target="_blank" rel="noopener noreferrer">
                 Instagram
             </a>
 
@@ -272,7 +291,7 @@
             <div class="footer-section footer-follow">
                 <h3>Follow Us</h3>
                 <div class="footer-social footer-social-buttons">
-                    <a href="https://www.instagram.com/lightingsky.india" class="social-instagram"><img src="images/icon/insta.png" alt="Instagram" class="footer-social-icon">Instagram</a>
+                    <a href="https://www.instagram.com/lightingsky.in/" class="social-instagram" target="_blank" rel="noopener noreferrer"><img src="images/icon/insta.png" alt="Instagram" class="footer-social-icon">Instagram</a>
                     <a href="https://www.facebook.com/profile.php?id=61590382779929" class="social-facebook"><img src="images/icon/FB.png" alt="Facebook" class="footer-social-icon">Facebook</a>
                     <!-- <a href="#" class="social-youtube"><img src="images/icon/yt.png" alt="YouTube" class="footer-social-icon">YouTube</a> -->
                 </div>
@@ -282,7 +301,38 @@
             <p>© 2026 LIGHTINGSKY PRIVATE LIMITED. All Rights Reserved.</p>
         </div>
     </footer>
-    <script>(function(){document.addEventListener('DOMContentLoaded',function(){var t=document.getElementById('menu-toggle');var n=document.getElementById('nav-links');if(!t||!n)return;t.addEventListener('click',function(){var o=n.classList.toggle('active');t.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');});n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){if(n.classList.contains('active')){n.classList.remove('active');t.classList.remove('open');t.setAttribute('aria-expanded','false');}});});window.addEventListener('keydown',function(e){if(e.key==='Escape'&&n.classList.contains('active')){n.classList.remove('active');t.classList.remove('open');t.setAttribute('aria-expanded','false');}});});})();</script>
+    <script>
+(function () {
+    document.addEventListener('DOMContentLoaded', function () {
+        var toggle = document.getElementById('menu-toggle');
+        var nav = document.getElementById('nav-links');
+        if (!toggle || !nav) return;
+
+        function setMenu(open) {
+            nav.classList.toggle('active', open);
+            toggle.classList.toggle('open', open);
+            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            toggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+        }
+
+        toggle.addEventListener('click', function () {
+            setMenu(!nav.classList.contains('active'));
+        });
+
+        nav.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', function () { setMenu(false); });
+        });
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') setMenu(false);
+        });
+
+        window.addEventListener('resize', function () {
+            if (window.innerWidth > 768) setMenu(false);
+        });
+    });
+})();
+</script>
     <script src="js/script.js"></script>
 
 </body>

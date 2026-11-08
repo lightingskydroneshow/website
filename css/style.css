@@ -2,8 +2,6 @@
    LIGHTINGSKY DRONE SHOW WEBSITE V3
 ========================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700;800;900&display=swap');
-
 *{
     margin:0;
     padding:0;
@@ -2153,17 +2151,217 @@ footer p{
         rgba(255,255,255,.08);
     }
 }
-/* HOME PAGE MOBILE MENU WHITE BOX FIX */
-button.menu-toggle,
+
+
+/* =========================================
+   LIGHTINGSKY FINAL RESPONSIVE + MENU FIX
+   Shared by all pages
+========================================= */
+
+/* Consistent, accessible hamburger button */
 .menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    padding: 10px !important;
+    margin: 0;
+    border: 0 !important;
+    border-radius: 8px;
     background: transparent !important;
     background-color: transparent !important;
-    border: none !important;
-    outline: none !important;
     box-shadow: none !important;
-    appearance: none !important;
-    -webkit-appearance: none !important;
-    padding: 0 !important;
     color: #ffffff !important;
+    appearance: none;
+    -webkit-appearance: none;
     cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    line-height: 1;
+    z-index: 10001;
+}
+.menu-toggle:focus-visible {
+    outline: 2px solid var(--cyan) !important;
+    outline-offset: 3px;
+}
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 2.5px;
+    border-radius: 3px;
+    background: #ffffff;
+    transition: transform .25s ease, opacity .2s ease;
+}
+.menu-toggle.open span:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg);
+}
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        min-height: 76px;
+        padding: 8px 5%;
+    }
+    .logo img {
+        width: 124px;
+        height: 60px;
+        padding: 4px;
+    }
+    .menu-toggle {
+        display: inline-flex;
+        flex: 0 0 44px;
+    }
+    .hero {
+        min-height: auto;
+        padding: 96px 0 28px;
+    }
+    .hero-content {
+        width: calc(100% - 28px);
+        max-width: 620px;
+        padding: 25px 18px 28px;
+        border-radius: 24px;
+    }
+    .hero-content h1 {
+        font-size: clamp(2rem, 8vw, 2.45rem);
+        line-height: 1.12;
+        letter-spacing: -.025em;
+        text-wrap: balance;
+    }
+    .hero-tag {
+        font-size: .72rem;
+        padding: 8px 13px;
+        margin-bottom: 18px;
+    }
+    .hero-content p {
+        font-size: 1rem;
+        line-height: 1.65;
+        margin: 12px 0 25px;
+    }
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+    .hero-buttons .btn-primary,
+    .hero-buttons .btn-secondary {
+        width: 100%;
+        min-height: 54px;
+        padding: 14px 20px;
+        font-size: 1rem;
+    }
+    .page-header {
+        padding: 105px 14px 28px;
+    }
+    .page-header-content {
+        width: 100%;
+        padding: 25px 18px;
+        border-radius: 22px;
+    }
+    .page-header h1 {
+        font-size: clamp(1.9rem, 7.5vw, 2.35rem);
+        line-height: 1.15;
+        text-wrap: balance;
+    }
+    .page-header p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    .services h2,
+    .gallery-preview h2,
+    .contact-home h2,
+    .gallery-section h2,
+    .video-section h2,
+    .showcase-section h2,
+    .mission-section h2,
+    .formations-section h2,
+    .process-section h2,
+    .map-section h2,
+    .social-section h2 {
+        font-size: clamp(1.65rem, 6vw, 2.1rem);
+        line-height: 1.2;
+        text-wrap: balance;
+    }
+    .about-content h2 {
+        font-size: 1.8rem;
+    }
+    .about-container,
+    .contact-container {
+        gap: 24px;
+    }
+    .service-grid,
+    .service-grid2,
+    .gallery-container,
+    .video-grid,
+    .showcase-grid,
+    .formation-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+    .stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+    .stat-box {
+        padding: 22px 12px;
+    }
+    .stat-box h2 {
+        font-size: 2rem;
+    }
+    .nav-links {
+        top: 84px;
+        right: -110%;
+        width: min(280px, calc(100vw - 32px));
+        max-height: calc(100vh - 100px);
+        overflow-y: auto;
+        padding: 18px;
+        gap: 8px;
+        background: rgba(5, 13, 31, .98);
+        border: 1px solid rgba(255,255,255,.12);
+        box-shadow: 0 18px 45px rgba(0,0,0,.4);
+    }
+    .nav-links.active {
+        right: 16px;
+    }
+    .nav-links a {
+        display: block;
+        padding: 13px 14px;
+        border-radius: 10px;
+    }
+    .footer-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .contact-section,
+    .map-section,
+    .social-section {
+        padding: 35px 5%;
+    }
+    .contact-info,
+    .contact-form {
+        padding: 22px;
+    }
+    .whatsapp-float {
+        width: 56px;
+        height: 56px;
+        right: 16px;
+        bottom: 16px;
+    }
+}
+
+@media (max-width: 380px) {
+    .hero-content h1 {
+        font-size: 1.9rem;
+    }
+    .stats {
+        grid-template-columns: 1fr 1fr;
+    }
+    .stat-box h2 {
+        font-size: 1.7rem;
+    }
 }
