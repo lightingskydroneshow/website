@@ -70,12 +70,6 @@ if (!droneContainer || prefersReducedMotion) {
         );
 
         window.setTimeout(function () {
-            if (document.hidden) {
-                window.setTimeout(function () {
-                    animateDrone(drone);
-                }, 1000);
-                return;
-            }
             animateDrone(drone);
         }, (duration + 3) * 1000);
     }
@@ -83,17 +77,4 @@ if (!droneContainer || prefersReducedMotion) {
     for (let i = 0; i < TOTAL_DRONES; i++) {
         createDrone();
     }
-
-    // Resume decorative movement after the visitor returns to the tab.
-    document.addEventListener("visibilitychange", function () {
-        if (!document.hidden) {
-            droneContainer.querySelectorAll(".drone-fly").forEach(function (drone) {
-                if (!drone.getAnimations().some(function (animation) {
-                    return animation.playState === "running";
-                })) {
-                    animateDrone(drone);
-                }
-            });
-        }
-    });
 }
