@@ -2020,140 +2020,6 @@ footer p{
 }
 
 /* =========================================
-   MOBILE MENU
-========================================= */
-
-.menu-toggle{
-
-    display:none;
-
-    font-size:32px;
-
-    color:white;
-
-    cursor:pointer;
-
-    z-index:10001;
-}
-
-@media(max-width:768px){
-
-    .navbar{
-        padding:16px 5%;
-    }
-
-    .hero{
-        min-height:auto;
-        padding-top:30px;
-    }
-
-    .hero-content{
-        width:calc(100% - 40px);
-        padding:28px 20px 30px;
-    }
-
-    .hero-content h1{
-        font-size:2.8rem;
-    }
-
-    .hero-content p{
-        font-size:1rem;
-    }
-
-    .hero-buttons{
-        flex-direction:column;
-        gap:14px;
-    }
-
-    .page-header{
-        padding-top:120px;
-        padding-bottom:60px;
-    }
-
-    .page-header h1,
-    .services h2,
-    .gallery-preview h2,
-    .contact-home h2,
-    .map-section h2,
-    .social-section h2,
-    .showcase-section h2,
-    .mission-section h2,
-    .formations-section h2,
-    .process-section h2{
-        font-size:2.4rem;
-    }
-
-    .footer-grid{
-        gap:24px;
-    }
-
-    .footer-bottom{
-        font-size:0.95rem;
-    }
-
-    .menu-toggle{
-
-        display:block;
-    }
-
-    .nav-links{
-
-        position:fixed;
-
-        top:80px;
-
-        right:-100%;
-
-        width:260px;
-
-        height:auto;
-
-        background:
-        rgba(8,17,32,.95);
-
-        backdrop-filter:blur(20px);
-
-        flex-direction:column;
-
-        padding:25px;
-
-        gap:20px;
-
-        border-radius:20px;
-
-        transition:.4s;
-
-        z-index:9999;
-    }
-
-    .nav-links.active{
-
-        right:20px;
-    }
-
-    .nav-links li{
-
-        width:100%;
-    }
-
-    .nav-links a{
-
-        display:block;
-
-        padding:12px;
-
-        border-radius:10px;
-    }
-
-    .nav-links a:hover{
-
-        background:
-        rgba(255,255,255,.08);
-    }
-}
-
-
-/* =========================================
    LIGHTINGSKY FINAL RESPONSIVE + MENU FIX
    Shared by all pages
 ========================================= */
@@ -2363,5 +2229,53 @@ footer p{
     }
     .stat-box h2 {
         font-size: 1.7rem;
+    }
+}
+
+
+/* LIGHTINGSKY enquiry form */
+.contact-form form { display: grid; gap: 12px; }
+.contact-form label { color: #ffffff; font-weight: 600; margin-top: 5px; }
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 14px 16px;
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 10px;
+    background: rgba(255,255,255,.08);
+    color: #ffffff;
+    font: inherit;
+    box-sizing: border-box;
+}
+.contact-form select option { color: #111827; background: #ffffff; }
+.contact-form input:focus-visible,
+.contact-form select:focus-visible,
+.contact-form textarea:focus-visible {
+    outline: 2px solid var(--cyan, #00E5FF);
+    outline-offset: 2px;
+}
+.contact-form textarea { resize: vertical; }
+.contact-form button[type="submit"] {
+    width: 100%;
+    min-height: 52px;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+/* Respect visitors who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto !important;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }

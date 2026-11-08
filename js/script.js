@@ -1,92 +1,80 @@
 const droneContainer = document.getElementById("drone-sky");
 
-const droneColors = [
-    "#00E5FF",
-    "#A020F0",
-    "#FF3CAC",
-    "#4DFFFF",
-    "#FFD700",
-    "#00FF88",
-    "#FF6B35",
-    "#FFFFFF"
-];
+// Do not create decorative animations when the container is absent or the
+// visitor has requested reduced motion in their operating-system settings.
+const prefersReducedMotion = window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-const TOTAL_DRONES = 100;
+if (!droneContainer || prefersReducedMotion) {
+    // The rest of the website remains fully usable without this decoration.
+} else {
+    const droneColors = [
+        "#00E5FF",
+        "#A020F0",
+        "#FF3CAC",
+        "#4DFFFF",
+        "#FFD700",
+        "#00FF88",
+        "#FF6B35",
+        "#FFFFFF"
+    ];
 
-function random(min, max) {
-    return Math.random() * (max - min) + min;
-}
+    // Use fewer animated elements on small screens to reduce mobile workload.
+    const isSmallScreen = window.matchMedia("(max-width: 768px)").matches;
+    const TOTAL_DRONES = isSmallScreen ? 35 : 100;
 
-function createDrone() {
+    function random(min, max) {
+        return Math.random() * (max - min) + min;
+    }
 
-    const drone = document.createElement("div");
+    function createDrone() {
+        const drone = document.createElement("div");
+        drone.classList.add("drone-fly");
+        drone.textContent = "✦";
+        droneContainer.appendChild(drone);
+        animateDrone(drone);
+    }
 
-    drone.classList.add("drone-fly");
+    function animateDrone(drone) {
+        if (!drone.isConnected || document.hidden) return;
 
-    drone.innerHTML = "✦";
+        const startX = random(0, window.innerWidth);
+        const startY = random(0, window.innerHeight);
+        const moveX = random(-400, 400);
+        const moveY = random(-300, 300);
+        const duration = random(10, 25);
 
-    droneContainer.appendChild(drone);
-
-    animateDrone(drone);
-}
-
-function animateDrone(drone) {
-
-    const startX = random(0, window.innerWidth);
-    const startY = random(0, window.innerHeight);
-
-    const moveX = random(-400, 400);
-    const moveY = random(-300, 300);
-
-    const duration = random(10, 25);
-
-    drone.style.left = startX + "px";
-    drone.style.top = startY + "px";
-
-    drone.style.color =
-        droneColors[
+        drone.style.left = startX + "px";
+        drone.style.top = startY + "px";
+        drone.style.color = droneColors[
             Math.floor(Math.random() * droneColors.length)
         ];
+        drone.style.fontSize = random(4, 10) + "px";
+        drone.style.opacity = "0";
 
-    drone.style.fontSize =
-        random(4, 10) + "px";
-
-    drone.style.opacity = "0";
-
-    drone.animate(
-        [
+        drone.animate(
+            [
+                { transform: "translate(0px,0px)", opacity: 0 },
+                { opacity: 1, offset: 0.2 },
+                {
+                    transform: `translate(${moveX}px,${moveY}px)`,
+                    opacity: 1,
+                    offset: 0.8
+                },
+                { opacity: 0 }
+            ],
             {
-                transform: "translate(0px,0px)",
-                opacity: 0
-            },
-            {
-                opacity: 1,
-                offset: 0.2
-            },
-            {
-                transform:
-                    `translate(${moveX}px,${moveY}px)`,
-                opacity: 1,
-                offset: 0.8
-            },
-            {
-                opacity: 0
+                duration: duration * 1000,
+                easing: "linear"
             }
-        ],
-        {
-            duration: duration * 1000,
-            easing: "linear"
-        }
-    );
+        );
 
-    setTimeout(() => {
+        window.setTimeout(function () {
+            animateDrone(drone);
+        }, (duration + 3) * 1000);
+    }
 
-        animateDrone(drone);
-
-    }, (duration + 3) * 1000);
-}
-
-for(let i = 0; i < TOTAL_DRONES; i++){
-
-    createDrone();
+    for (let i = 0; i < TOTAL_DRONES; i++) {
+        createDrone();
+    }
 }

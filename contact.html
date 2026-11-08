@@ -96,7 +96,7 @@
 
                     <h3><img src="images/icon/CALL.png" alt="Phone icon" class="footer-icon-img"> Phone</h3>
 
-                    <p>+91 72028 42521, +91 9727069727</p>
+                    <p><a href="tel:+917202842521">+91 72028 42521</a>, <a href="tel:+919727069727">+91 9727069727</a></p>
 
                 </div>
 
@@ -104,7 +104,7 @@
 
                     <h3><img src="images/icon/MAIL.png" alt="Email icon" class="footer-icon-img"> Email</h3>
 
-                    <p>lightingskydrone@gmail.com</p>
+                    <p><a href="mailto:lightingskydrone@gmail.com">lightingskydrone@gmail.com</a></p>
 
                 </div>
 
@@ -125,7 +125,7 @@
                     <h3><img src="images/icon/WA.png" alt="WhatsApp icon" class="footer-icon-img"> WhatsApp</h3>
 
                     <a href="https://wa.me/917202842521?text=Hello%20LIGHTINGSKY%20Team,%20we%20find%20your%20drone%20shows%20fascinating%20and%20would%20love%20to%20learn%20more%20about%20your%20services.%20Could%20you%20please%20provide%20details%20on%20how%20we%20can%20collaborate%20for%20an%20upcoming%20event%3F%20Looking%20forward%20to%20hearing%20from%20you."
-                    target="_blank"
+                    target="_blank" rel="noopener noreferrer"
                     class="btn-primary whatsapp-button">
 
                         <img src="images/icon/WA.png" alt="" class="btn-icon" aria-hidden="true"> Chat On WhatsApp
@@ -140,52 +140,69 @@
                     <img src="images/Logo.png" alt="LIGHTINGSKY Logo">
                 </div>
             </div>
-            <!-- CONTACT FORM -->
-
-            <!-- <div class="contact-form">
-
+            <!-- WHATSAPP ENQUIRY FORM -->
+            <div class="contact-form">
                 <h2>Request A Quote</h2>
+                <p>Share your event details and our team will contact you.</p>
+                <form id="enquiry-form">
+                    <label for="enquiry-name">Your Name</label>
+                    <input id="enquiry-name" name="name" type="text" placeholder="Your name" autocomplete="name" required>
 
-                <form>
+                    <label for="enquiry-phone">Phone Number</label>
+                    <input id="enquiry-phone" name="phone" type="tel" placeholder="+91" autocomplete="tel" inputmode="tel" required>
 
-                    <input
-                        type="text"
-                        placeholder="Your Name"
-                        required>
+                    <label for="enquiry-event">Event Type</label>
+                    <select id="enquiry-event" name="event" required>
+                        <option value="">Select event type</option>
+                        <option>Wedding</option>
+                        <option>Corporate Event</option>
+                        <option>Festival</option>
+                        <option>Government Event</option>
+                        <option>Product Launch / Brand Promotion</option>
+                        <option>Other</option>
+                    </select>
 
-                    <input
-                        type="email"
-                        placeholder="Email Address"
-                        required>
+                    <label for="enquiry-location">Event Location</label>
+                    <input id="enquiry-location" name="location" type="text" placeholder="City / venue" required>
 
-                    <input
-                        type="tel"
-                        placeholder="Phone Number"
-                        required>
+                    <label for="enquiry-date">Event Date</label>
+                    <input id="enquiry-date" name="date" type="date">
 
-                    <input
-                        type="text"
-                        placeholder="Event Type">
+                    <label for="enquiry-details">Additional Details</label>
+                    <textarea id="enquiry-details" name="details" rows="5" placeholder="Expected drone count, event timing or other requirements"></textarea>
 
-                    <input
-                        type="text"
-                        placeholder="Event Location">
-
-                    <textarea
-                        rows="6"
-                        placeholder="Tell us about your event"></textarea>
-
-                    <button
-                        type="submit"
-                        class="btn-primary">
-
-                        Send Inquiry
-
-                    </button>
-
-                </form> -->
-
+                    <button type="submit" class="btn-primary">Send Enquiry on WhatsApp</button>
+                </form>
             </div>
+
+            <script>
+            (function () {
+                var form = document.getElementById("enquiry-form");
+                if (!form) return;
+
+                form.addEventListener("submit", function (event) {
+                    event.preventDefault();
+                    if (!form.reportValidity()) return;
+
+                    var data = new FormData(form);
+                    var message = [
+                        "Hello LIGHTINGSKY Team, I would like to enquire about a drone show.",
+                        "Name: " + data.get("name"),
+                        "Phone: " + data.get("phone"),
+                        "Event: " + data.get("event"),
+                        "Location: " + data.get("location"),
+                        "Event date: " + (data.get("date") || "Not decided"),
+                        "Details: " + (data.get("details") || "Not provided")
+                    ].join("\n");
+
+                    window.open(
+                        "https://wa.me/917202842521?text=" + encodeURIComponent(message),
+                        "_blank",
+                        "noopener,noreferrer"
+                    );
+                });
+            })();
+            </script>
 
         </div>
 
@@ -276,11 +293,11 @@
                 <h3>Contact & Address</h3>
                 <div class="footer-contact-item">
                     <img src="images/icon/CALL.png" alt="Phone" class="footer-icon-img">
-                    <p>+91 72028 42521, +91 9727069727</p>
+                    <p><a href="tel:+917202842521">+91 72028 42521</a>, <a href="tel:+919727069727">+91 9727069727</a></p>
                 </div>
                 <div class="footer-contact-item">
                     <img src="images/icon/MAIL.png" alt="Email" class="footer-icon-img">
-                    <p>lightingskydrone@gmail.com</p>
+                    <p><a href="mailto:lightingskydrone@gmail.com">lightingskydrone@gmail.com</a></p>
                 </div>
                 <div class="footer-contact-item">
                     <img src="images/icon/LOCATION.png" alt="Location" class="footer-icon-img">
