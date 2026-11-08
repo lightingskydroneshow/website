@@ -2231,3 +2231,35 @@ footer p{
         font-size: 1.7rem;
     }
 }
+
+
+/* LIGHTINGSKY enquiry form */
+.contact-form form { display: grid; gap: 12px; }
+.contact-form label { color: #ffffff; font-weight: 600; margin-top: 5px; }
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 14px 16px;
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 10px;
+    background: rgba(255,255,255,.08);
+    color: #ffffff;
+    font: inherit;
+    box-sizing: border-box;
+}
+.contact-form select option { color: #111827; background: #ffffff; }
+.contact-form input:focus-visible,
+.contact-form select:focus-visible,
+.contact-form textarea:focus-visible {
+    outline: 2px solid var(--cyan, #00E5FF);
+    outline-offset: 2px;
+}
+.contact-form textarea { resize: vertical; }
+.contact-form button[type="submit"] {
+    width: 100%;
+    min-height: 52px;
+    margin-top: 8px;
+    cursor: pointer;
+}
