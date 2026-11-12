@@ -19,11 +19,14 @@
     <meta property="og:title" content="LIGHTINGSKY | Professional Drone Light Shows in India">
     <meta property="og:description" content="LIGHTINGSKY PRIVATE LIMITED creates professional drone light shows for weddings, corporate events, festivals, government celebrations and brand promotions across India.">
     <meta property="og:url" content="https://lightingsky.in/">
-    <meta property="og:image" content="https://lightingsky.in/images/Logo.png">
+    <meta property="og:image" content="https://lightingsky.in/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="LIGHTINGSKY Private Limited drone light show company logo">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="LIGHTINGSKY | Professional Drone Light Shows in India">
     <meta name="twitter:description" content="LIGHTINGSKY PRIVATE LIMITED creates professional drone light shows for weddings, corporate events, festivals, government celebrations and brand promotions across India.">
-    <meta name="twitter:image" content="https://lightingsky.in/images/Logo.png">
+    <meta name="twitter:image" content="https://lightingsky.in/images/og-image.jpg">
 
 
     <!-- SEO META TAGS -->
@@ -32,7 +35,11 @@
 
 <!-- CANONICAL URL -->
 <!-- FAVICON -->
-    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
 
     <!-- OPEN GRAPH / SOCIAL MEDIA -->
 
@@ -50,62 +57,159 @@
 <!-- MAIN CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/style.css?v=20261108b">
+    <link rel="stylesheet" href="css/style.css?v=20261112">
 
+    <!-- ===== STRUCTURED DATA ===== -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "LIGHTINGSKY PRIVATE LIMITED",
-      "url": "https://lightingsky.in/",
-      "logo": "https://lightingsky.in/images/Logo.png",
-      "email": "lightingskydrone@gmail.com",
-      "telephone": ["+91-72028-42521", "+91-97270-69727"],
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "SF/3, Shivam Complex, near Shakuntal Bungalow, New India Colony, Nikol",
-        "addressLocality": "Ahmedabad",
-        "addressRegion": "Gujarat",
-        "postalCode": "382350",
-        "addressCountry": "IN"
-      },
-      "sameAs": [
-        "https://www.instagram.com/lightingsky.in/",
-        "https://www.facebook.com/profile.php?id=61590382779929"
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://lightingsky.in/#organization",
+          "name": "LIGHTINGSKY PRIVATE LIMITED",
+          "alternateName": "LightingSky",
+          "url": "https://lightingsky.in/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://lightingsky.in/images/og-image.jpg",
+            "width": 1200,
+            "height": 630
+          },
+          "image": "https://lightingsky.in/images/og-image.jpg",
+          "email": "lightingskydrone@gmail.com",
+          "telephone": "+917202842521",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "SF/3, Shivam Complex, near Shakuntal Bungalow, New India Colony, Nikol",
+            "addressLocality": "Ahmedabad",
+            "addressRegion": "Gujarat",
+            "postalCode": "382350",
+            "addressCountry": "IN"
+          },
+          "sameAs": [
+            "https://www.instagram.com/lightingsky.in/",
+            "https://www.facebook.com/profile.php?id=61590382779929"
+          ]
+        },
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://lightingsky.in/#localbusiness",
+          "name": "LIGHTINGSKY PRIVATE LIMITED",
+          "description": "Professional synchronized drone light shows for weddings, corporate events, festivals, government events and brand promotions across India.",
+          "url": "https://lightingsky.in/",
+          "image": "https://lightingsky.in/images/og-image.jpg",
+          "logo": "https://lightingsky.in/images/og-image.jpg",
+          "telephone": "+917202842521",
+          "email": "lightingskydrone@gmail.com",
+          "priceRange": "$$$",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "SF/3, Shivam Complex, near Shakuntal Bungalow, New India Colony, Nikol",
+            "addressLocality": "Ahmedabad",
+            "addressRegion": "Gujarat",
+            "postalCode": "382350",
+            "addressCountry": "IN"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 23.0470,
+            "longitude": 72.6650
+          },
+          "areaServed": { "@type": "Country", "name": "India" },
+          "parentOrganization": { "@id": "https://lightingsky.in/#organization" },
+          "sameAs": [
+            "https://www.instagram.com/lightingsky.in/",
+            "https://www.facebook.com/profile.php?id=61590382779929"
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Drone Light Show Services",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Wedding Drone Shows", "serviceType": "Drone light show for weddings" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Corporate Events", "serviceType": "Corporate drone light show" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Government Events", "serviceType": "Government event drone show" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Festival Shows", "serviceType": "Festival drone light show" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Brand Promotion", "serviceType": "Drone show brand activation" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Animations", "serviceType": "Custom drone formation design" } }
+            ]
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://lightingsky.in/#website",
+          "url": "https://lightingsky.in/",
+          "name": "LIGHTINGSKY",
+          "publisher": { "@id": "https://lightingsky.in/#organization" },
+          "inLanguage": "en-IN"
+        }
       ]
     }
     </script>
 
-
-    <!-- LIGHTINGSKY PAGE STRUCTURED DATA -->
     <script type="application/ld+json">
     {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "LIGHTINGSKY PRIVATE LIMITED",
-  "url": "https://lightingsky.in/",
-  "image": "https://lightingsky.in/images/Logo.png",
-  "logo": "https://lightingsky.in/images/Logo.png",
-  "description": "Professional synchronized drone light shows for weddings, corporate events, festivals, government events and brand promotions across India.",
-  "telephone": "+91-72028-42521",
-  "email": "lightingskydrone@gmail.com",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "SF/3, Shivam Complex, near Shakuntal Bungalow, New India Colony, Nikol",
-    "addressLocality": "Ahmedabad",
-    "addressRegion": "Gujarat",
-    "postalCode": "382350",
-    "addressCountry": "IN"
-  },
-  "sameAs": [
-    "https://www.instagram.com/lightingsky.in/",
-    "https://www.facebook.com/profile.php?id=61590382779929"
-  ],
-  "areaServed": {
-    "@type": "Country",
-    "name": "India"
-  }
-}
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does a drone light show cost in India?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The cost depends on the number of drones, the length of the show and the venue location. A compact show uses fewer drones and a shorter sequence, while large festival and government shows use hundreds of drones with fully custom formations. Share your date, venue and audience size with us for an exact quote."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many drones are needed for a wedding drone show?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most wedding shows use between 50 and 200 drones. More drones mean larger, more detailed formations — names, portraits, rings — that stay clearly readable from the ground across a bigger venue."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you need government permission for a drone show?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Drone light shows in India need clearances under DGCA rules along with local police and venue permissions. LIGHTINGSKY handles the permission process as part of the booking."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How far in advance should a drone show be booked?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Book at least three to four weeks ahead. Custom formation design, permissions and a site survey all take time, and wedding and festival dates fill up quickly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can the formations be customised to our logo or names?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Every show is designed from scratch, so company logos, couple names, Gujarati and Hindi text, countdowns and product shapes can all be built into the formations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which cities does LIGHTINGSKY cover?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We are based in Nikol, Ahmedabad and perform drone light shows across Gujarat and the rest of India, including Surat, Vadodara, Rajkot and destination wedding venues."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are drone light shows safe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The drones fly a pre-programmed, collision-checked path at a safe distance from the audience, with no fire, smoke or falling debris — a quieter and cleaner alternative to fireworks."
+          }
+        }
+      ]
+    }
     </script>
 </head>
 
@@ -119,7 +223,7 @@
         <nav class="navbar">
 
             <a href="./index.html" class="logo" aria-label="LIGHTINGSKY Home">
-                <img src="images/Logo.png" alt="LIGHTINGSKY Logo">
+                <img src="images/Logo.png" alt="LIGHTINGSKY Logo" width="480" height="130">
             </a>
 
             <button class="menu-toggle" id="menu-toggle" type="button"
@@ -306,6 +410,53 @@
 
     <!-- ================= FOOTER ================= -->
 
+    <!-- ================= FAQ ================= -->
+
+    <section class="faq" aria-labelledby="faq-title">
+
+        <div class="faq-inner">
+
+            <h2 id="faq-title">Drone Show FAQs</h2>
+
+            <details class="faq-item">
+                <summary>How much does a drone light show cost in India?</summary>
+                <p>The cost depends on the number of drones, the length of the show and the venue location. A compact show uses fewer drones and a shorter sequence, while large festival and government shows use hundreds of drones with fully custom formations. Share your date, venue and audience size with us for an exact quote.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>How many drones are needed for a wedding drone show?</summary>
+                <p>Most wedding shows use between 50 and 200 drones. More drones mean larger, more detailed formations — names, portraits, rings — that stay clearly readable from the ground across a bigger venue.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>Do you need government permission for a drone show?</summary>
+                <p>Yes. Drone light shows in India need clearances under DGCA rules along with local police and venue permissions. LIGHTINGSKY handles the permission process as part of the booking.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>How far in advance should a drone show be booked?</summary>
+                <p>Book at least three to four weeks ahead. Custom formation design, permissions and a site survey all take time, and wedding and festival dates fill up quickly.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>Can the formations be customised to our logo or names?</summary>
+                <p>Yes. Every show is designed from scratch, so company logos, couple names, Gujarati and Hindi text, countdowns and product shapes can all be built into the formations.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>Which cities does LIGHTINGSKY cover?</summary>
+                <p>We are based in Nikol, Ahmedabad and perform drone light shows across Gujarat and the rest of India, including Surat, Vadodara, Rajkot and destination wedding venues.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>Are drone light shows safe?</summary>
+                <p>Yes. The drones fly a pre-programmed, collision-checked path at a safe distance from the audience, with no fire, smoke or falling debris — a quieter and cleaner alternative to fireworks.</p>
+            </details>
+
+        </div>
+
+    </section>
+
     <section class="seo-content" aria-labelledby="seo-home-title">
   <div class="seo-content-inner">
     <h2 id="seo-home-title">Professional Drone Light Shows in India</h2>
@@ -325,7 +476,7 @@
             <div class="footer-section footer-brand">
 
                 <a href="index.html" class="footer-logo">
-                    <img src="images/Logo.png" alt="LIGHTINGSKY Logo">
+                    <img src="images/Logo.png" alt="LIGHTINGSKY Logo" width="480" height="130">
                 </a>
 
                 <p>
@@ -377,7 +528,7 @@
 
                     <img
                         src="images/icon/CALL.png"
-                        alt="LIGHTINGSKY drone show visual" 
+                        alt="Phone" 
                         class="footer-icon-img">
 
                     <p>
@@ -391,7 +542,7 @@
 
                     <img
                         src="images/icon/MAIL.png"
-                        alt="LIGHTINGSKY drone show visual" 
+                        alt="Email" 
                         class="footer-icon-img">
 
                     <p>
@@ -406,7 +557,7 @@
 
                     <img
                         src="images/icon/LOCATION.png"
-                        alt="LIGHTINGSKY drone show visual" 
+                        alt="Location" 
                         class="footer-icon-img">
 
                     <p>
@@ -434,7 +585,7 @@
 
                         <img
                             src="images/icon/insta.png"
-                            alt="LIGHTINGSKY drone show visual" 
+                            alt="Instagram" 
                             class="footer-social-icon">
 
                         Instagram
@@ -449,7 +600,7 @@
 
                         <img
                             src="images/icon/FB.png"
-                            alt="LIGHTINGSKY drone show visual" 
+                            alt="Facebook" 
                             class="footer-social-icon">
 
                         Facebook

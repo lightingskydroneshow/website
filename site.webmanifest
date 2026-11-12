@@ -1,0 +1,14 @@
+{
+  "name": "LIGHTINGSKY PRIVATE LIMITED",
+  "short_name": "LIGHTINGSKY",
+  "description": "Professional drone light shows for weddings, corporate events, festivals and brand promotions across India.",
+  "icons": [
+    { "src": "images/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "images/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "images/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "theme_color": "#020615",
+  "background_color": "#020615",
+  "display": "standalone",
+  "start_url": "/"
+}

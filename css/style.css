@@ -184,10 +184,10 @@ body::before{
 
 .logo img{
     
-    width:140px;
-    height: 70px;
+    width:190px;
+    height: 54px;
     
-    padding:7px;
+    padding:4px;
     object-fit:contain;
 
     border-radius:7px;
@@ -2075,9 +2075,9 @@ footer p{
         padding: 8px 5%;
     }
     .logo img {
-        width: 124px;
-        height: 60px;
-        padding: 4px;
+        width: 152px;
+        height: 44px;
+        padding: 2px;
     }
     .menu-toggle {
         display: inline-flex;
@@ -2467,4 +2467,88 @@ footer p{
 }
 @media (max-width: 768px) {
     .seo-content { padding: 34px 6%; }
+}
+
+
+/* =========================================
+   FAQ
+========================================= */
+
+.faq {
+    padding: 56px 8%;
+    background: rgba(4, 13, 32, .55);
+}
+
+.faq-inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq h2 {
+    margin: 0 0 26px;
+    color: var(--cyan, #3bf5d7);
+    font-size: clamp(1.55rem, 3vw, 2.15rem);
+    line-height: 1.25;
+    text-align: center;
+}
+
+.faq-item {
+    background: var(--card, rgba(7, 14, 36, .72));
+    border: 1px solid var(--border, rgba(255, 255, 255, .12));
+    border-radius: 12px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    transition: border-color .3s;
+}
+
+.faq-item[open],
+.faq-item:hover {
+    border-color: rgba(91, 192, 255, .45);
+}
+
+.faq-item summary {
+    padding: 18px 52px 18px 22px;
+    cursor: pointer;
+    position: relative;
+    list-style: none;
+    font-weight: 600;
+    color: var(--white, #f5faff);
+    font-size: clamp(1rem, 1.6vw, 1.08rem);
+    line-height: 1.5;
+}
+
+.faq-item summary::-webkit-details-marker { display: none; }
+
+.faq-item summary::after {
+    content: "+";
+    position: absolute;
+    right: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    line-height: 1;
+    color: var(--blue, #5bc0ff);
+    transition: transform .3s;
+}
+
+.faq-item[open] summary::after {
+    content: "\2212";
+}
+
+.faq-item summary:focus-visible {
+    outline: 2px solid var(--blue, #5bc0ff);
+    outline-offset: -2px;
+}
+
+.faq-item p {
+    margin: 0;
+    padding: 0 22px 20px;
+    color: var(--text, #cdd8ff);
+    line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+    .faq { padding: 38px 6%; }
+    .faq-item summary { padding: 16px 46px 16px 18px; }
+    .faq-item p { padding: 0 18px 18px; }
 }
